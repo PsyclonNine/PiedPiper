@@ -109,7 +109,7 @@ header {
 
 .container {
     /* block model */
-    max-width: 1110px;
+    width: 1110px;
     margin: 0 auto;
 }
 
@@ -140,6 +140,27 @@ header {
 .list li {
     /* block model */
     display: inline;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.head-list label {    
+    display: none;
+    border: 1px solid #fff;   
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.head-list label:hover{
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.list li:not(:last-child) {
+    border-right: 2px solid #FFFFFF;
+    padding-right: 5px;
 }
 
 a.head-nav:active,
@@ -290,9 +311,13 @@ a.head-nav {
 .team-box {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     width: 100%;
 }
 
+.card-box {
+    display: contents;
+}
 
 .card {
     display: flex;
@@ -301,6 +326,8 @@ a.head-nav {
     width: 213px;
     margin-bottom: 60px;
 }
+
+
 
 .team-name {
     order: 1;
@@ -343,4 +370,140 @@ a.head-nav {
     line-height: 21px;
     text-align: center;
     color: #FFFFFF;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+
+    .container {
+        min-width: 300px;
+        max-width: 460px;
+    }
+
+    .list li {
+        /* block model */
+        display: block;
+        
+    }
+
+    .list li:not(:last-child){
+        border-right: none;
+        margin-top: 5px;
+    }
+
+    .head-list label {
+        display: inline-block;
+    }
+
+    .head-list>ul {
+        display: none;
+    }
+
+    input[type="checkbox"]:checked~label+ul {
+        display: block;
+    }
+
+    .hero-box {
+        min-width: 300px;
+        max-width: 460px;
+    }
+
+    .team-box {
+        flex-wrap: wrap;
+    }
+
+    .card-box {
+        display: flex;
+    }
+
+    .footer-container {
+        min-width: 300px;
+        max-width: 460px;
+    }
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+    .container {
+        min-width: 460px;
+        max-width: 742px;
+    }
+
+    .hero-box {
+        min-width: 460px;
+        max-width: 7420px;
+    }
+
+    .team-box {
+        flex-wrap: wrap;
+    }
+
+
+    .footer-container {
+        min-width: 460px;
+        max-width: 742px;
+    }
+
+    .card-box:nth-child(3n)::after {
+        content: '';
+        width: 100%;
+    }
+}
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    .container {
+        min-width: 743px;
+        max-width: 1004px;
+    }
+
+    .hero-box {
+        min-width: 743px;
+        max-width: 1004px;
+    }
+
+    .team-box {
+        flex-wrap: wrap;
+    }
+
+
+    .footer-container {
+        min-width: 743px;
+        max-width: 1004px;
+    }
+
+    .card-box:nth-child(3n)::after {
+        content: '';
+        width: 100%;
+    }
+}
+
+
+@media screen and (min-width: 1025px) {
+
+    .container {
+        min-width: 1004px;
+        max-width: 1110px;
+    }
+
+    .hero-box {
+        min-width: 1004px;
+        max-width: 1110px;
+    }
+
+    .team-box {
+        flex-wrap: wrap;
+    }
+
+
+    .footer-container {
+        min-width: 1004px;
+        max-width: 1110px;
+    }
+
+    .card-box:nth-child(3n)::after {
+        content: '';
+        width: 100%;
+    }
 }
