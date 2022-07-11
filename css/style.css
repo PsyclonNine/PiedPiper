@@ -92,14 +92,27 @@ h6 {
 
 body {
     /* block model */
-    min-width: 1219px;
-
     /* typography */
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 400;
+
+}
+
+.head-title {
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 75px;
+    /* identical to box height */
+    text-align: center;
+    color: #007765;
+}
+
+.text {
     font-size: 32px;
     line-height: 38px;
+
+    color: #000000;
 }
 
 header {
@@ -146,14 +159,15 @@ input[type="checkbox"] {
     display: none;
 }
 
-.head-list label {    
+.head-list label {
     display: none;
-    border: 1px solid #fff;   
+    border: 1px solid #fff;
     padding: 5px 10px;
     cursor: pointer;
     transition: 0.3s;
 }
-.head-list label:hover{
+
+.head-list label:hover {
     color: #fff;
     border: 1px solid #fff;
 }
@@ -183,7 +197,7 @@ a.head-nav {
     /* Safari 3.1+ и Chrome 4.0+ */
     -o-background-size: 100%;
     /* Opera 9.6+ */
-    background-size: 100%;
+    background-size: cover;
     /* Современные браузеры */
 }
 
@@ -208,24 +222,6 @@ a.head-nav {
     /* bloc model */
     margin: 16px;
     /* typigraphy */
-    font-style: normal;
-    font-weight: 500;
-    font-size: 64px;
-    line-height: 75px;
-    /* identical to box height */
-    text-align: center;
-
-    color: #007765;
-}
-
-.problem-text {
-    /* block model */
-
-    /* typography */
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 38px;
-    color: #000000;
 }
 
 .problem-text:not(:last-child) {
@@ -242,7 +238,7 @@ a.head-nav {
     /* Safari 3.1+ и Chrome 4.0+ */
     -o-background-size: 100%;
     /* Opera 9.6+ */
-    background-size: 100%;
+    background-size: cover;
     /* Современные браузеры */
 
 }
@@ -271,13 +267,6 @@ a.head-nav {
     /* block model */
     margin-top: 48px;
     margin-bottom: 16px;
-    /* typography */
-    font-weight: 500;
-    font-size: 64px;
-    line-height: 75px;
-    text-align: center;
-    /* decor */
-    color: #007765;
 }
 
 .introducing-logo {
@@ -300,13 +289,6 @@ a.head-nav {
     padding-bottom: 56px;
 }
 
-.team-head {
-    font-weight: 500;
-    font-size: 64px;
-    line-height: 75px;
-    text-align: center;
-    color: #007765;
-}
 
 .team-box {
     display: flex;
@@ -374,18 +356,29 @@ a.head-nav {
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
 
+    .head-title {
+        font-size: 48px;
+    }
+
+    .text {
+        font-size: 24px;
+    }
+
     .container {
-        min-width: 300px;
-        max-width: 460px;
+        width: 90%;
+    }
+
+    .hero-text {
+        font-size: 36px;
     }
 
     .list li {
         /* block model */
         display: block;
-        
+
     }
 
-    .list li:not(:last-child){
+    .list li:not(:last-child) {
         border-right: none;
         margin-top: 5px;
     }
@@ -403,12 +396,12 @@ a.head-nav {
     }
 
     .hero-box {
-        min-width: 300px;
-        max-width: 460px;
+        width: 100%;
     }
 
     .team-box {
         flex-wrap: wrap;
+        justify-content: center;
     }
 
     .card-box {
@@ -416,8 +409,7 @@ a.head-nav {
     }
 
     .footer-container {
-        min-width: 300px;
-        max-width: 460px;
+        width: 90%;
     }
 }
 
@@ -425,13 +417,35 @@ a.head-nav {
 @media screen and (min-width: 481px) and (max-width: 768px) {
 
     .container {
-        min-width: 460px;
-        max-width: 742px;
+        width: 90%;
     }
 
+    .list li {
+        /* block model */
+        display: block;
+
+    }
+
+    .list li:not(:last-child) {
+        border-right: none;
+        margin-top: 5px;
+    }
+
+    .head-list label {
+        display: inline-block;
+    }
+
+    .head-list>ul {
+        display: none;
+    }
+
+    input[type="checkbox"]:checked~label+ul {
+        display: block;
+    }
+
+
     .hero-box {
-        min-width: 460px;
-        max-width: 7420px;
+        width: 100%;
     }
 
     .team-box {
@@ -440,27 +454,22 @@ a.head-nav {
 
 
     .footer-container {
-        min-width: 460px;
-        max-width: 742px;
+        width: 90%;
     }
 
-    .card-box:nth-child(3n)::after {
-        content: '';
-        width: 100%;
-    }
+
 }
 
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
 
     .container {
-        min-width: 743px;
-        max-width: 1004px;
+        width: 90%;
     }
 
     .hero-box {
-        min-width: 743px;
-        max-width: 1004px;
+        width: 100%;
+
     }
 
     .team-box {
@@ -469,8 +478,8 @@ a.head-nav {
 
 
     .footer-container {
-        min-width: 743px;
-        max-width: 1004px;
+        width: 100%;
+
     }
 
     .card-box:nth-child(3n)::after {
@@ -483,13 +492,12 @@ a.head-nav {
 @media screen and (min-width: 1025px) {
 
     .container {
-        min-width: 1004px;
+        min-width: 1025px;
         max-width: 1110px;
     }
 
     .hero-box {
-        min-width: 1004px;
-        max-width: 1110px;
+        width: 100%;
     }
 
     .team-box {
@@ -498,8 +506,8 @@ a.head-nav {
 
 
     .footer-container {
-        min-width: 1004px;
-        max-width: 1110px;
+        min-width: 550px;
+        max-width: 550px;
     }
 
     .card-box:nth-child(3n)::after {
